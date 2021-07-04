@@ -8,8 +8,11 @@ class Search extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  // Search Github users through props from Search.js
   onSubmit = (e) => {
     e.preventDefault();
+    this.props.searchUsers(this.state.text);
+    this.setState({ text: '' });
   };
 
   render() {
